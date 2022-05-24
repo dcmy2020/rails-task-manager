@@ -12,7 +12,7 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = Task.new(params[:task])
+    @task = Task.new(task_params)
     @task.save # Will raise ActiveModel::ForbiddenAttributesError
     redirect_to task_path(@task)
   end
